@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Partenope</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/feed.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/image-modal.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <button id="burgerBtn">☰</button>
+  <div class="logo-container">
+    <img src="assets/icons/logo.png" alt="Bella Partenope" class="logo">
+  </div>
+  <div class="language-selector">
+    <button id="langBtn" class="lang-btn"></button>
+    <div id="langMenu" class="lang-menu hidden">
+      <button data-lang="es" class="lang-option">Español</button>
+      <button data-lang="en" class="lang-option">English</button>
+      <button data-lang="it" class="lang-option">Italiano</button>
+      <button data-lang="fr" class="lang-option">Français</button>
+      <button data-lang="de" class="lang-option">Deutsch</button>
+    </div>
+  </div>
+</header>
+
+<aside id="sideMenu" class="side-menu hidden">
+  <nav id="categories"></nav>
+</aside>
+
+<main>
+
+  <section id="feedView" class="view active">
+    <div id="feed"></div>
+
+    <div class="desktop-controls">
+      <button id="prev">⬆</button>
+      <button id="next">⬇</button>
+    </div>
+  </section>
+
+  <section id="menuView" class="view">
+    <div id="menuList"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <button data-view="feed" class="footer-icon-btn">
+    <img src="assets/icons/play.svg" alt="Presentación" class="footer-icon">
+  </button>
+  <button data-view="menu" class="footer-icon-btn">
+    <img src="assets/icons/menu.png" alt="Menú" class="footer-icon">
+  </button>
+</footer>
+
+<!-- MODAL INFO -->
+<div id="infoModal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeModal">✕</button>
+    <h2 id="modalTitle"></h2>
+
+    <h4 id="modalIngredientsTitle">Ingredientes</h4>
+    <ul id="modalIngredients"></ul>
+
+    <h4 id="modalAllergensTitle">Alérgenos</h4>
+    <ul id="modalAllergens"></ul>
+  </div>
+</div>
+
+<!-- MODAL IMAGEN -->
+<div id="imageModal" class="image-modal hidden">
+  <img id="modalImage" src="" alt="Imagen del plato">
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
