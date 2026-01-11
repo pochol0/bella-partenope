@@ -1,0 +1,23 @@
+/**
+ * Variables CSS globales
+ * Define los colores y valores reutilizables de la aplicación
+ */
+
+:root {
+  /* Colores de la bandera italiana */
+  --green: #009246;
+  --white: #ffffff;
+  --red: #ce2b37;
+  
+  /* Colores de fondo */
+  --bg-dark: #0a0a0a;
+  --bg-card: #1a1a1a;
+  
+  /* Colores de texto */
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  
+  /* Sombras */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,324 @@
+/**
+ * Estilos de layout principal
+ * Header, footer, menú lateral y estructura general
+ */
+
+/* ============================================
+   BODY Y ESTRUCTURA BASE
+   ============================================ */
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Prevenir pull-to-refresh en móviles */
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--green) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--red) 66.66%, var(--red) 100%);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Logo en el centro del header */
+.logo-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  padding: 8px;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ============================================
+   BOTÓN HAMBURGUESA
+   ============================================ */
+
+#burgerBtn {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 101;
+}
+
+#burgerBtn:hover {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   SELECTOR DE IDIOMA
+   ============================================ */
+
+.language-selector {
+  position: relative;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-btn {
+  background: #000;
+  border: 2px solid #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 101;
+  padding: 0;
+  margin: 0;
+}
+
+.lang-btn:hover {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: var(--shadow-hover);
+  min-width: 150px;
+  backdrop-filter: blur(20px);
+}
+
+.lang-option {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(3px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--green) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--red) 66.66%, var(--red) 100%);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.footer-icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* Botón del feed (presentación) - fondo negro */
+.footer-icon-btn[data-view="feed"] {
+  background: #000;
+  border: 2px solid #000;
+}
+
+.footer-icon-btn[data-view="feed"]:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: #000;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón del menú - fondo blanco con borde negro */
+.footer-icon-btn[data-view="menu"] {
+  background: #fff;
+  border: 4px solid #000;
+  padding: 3px; /* Menos padding para que la imagen se vea más grande */
+}
+
+.footer-icon-btn[data-view="menu"]:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #000;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.footer-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+/* Solo aplicar filtro al icono play del feed */
+.footer-icon-btn[data-view="feed"] img.footer-icon {
+  filter: brightness(0) invert(1) !important;
+  -webkit-filter: brightness(0) invert(1) !important;
+}
+
+/* ============================================
+   VISTAS (FEED Y MENÚ)
+   ============================================ */
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+/* Espacio para header fijo en modo menú */
+#menuView {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  min-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+/* ============================================
+   MENÚ LATERAL (CATEGORÍAS)
+   ============================================ */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+  padding: 80px 0 20px 0;
+  z-index: 200;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.side-menu.hidden {
+  transform: translateX(-100%);
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    width: 85%;
+  }
+}
+
+#categories {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.category-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--green);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 146, 70, 0.3);
+}
+
+/* ============================================
+   CLASE UTILITARIA
+   ============================================ */
+
+.hidden {
+  display: none;
+}
